@@ -1,0 +1,766 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="jp@gc - Dummy Sampler" enabled="true">
+          <boolProp name="WAITING">true</boolProp>
+          <boolProp name="SUCCESFULL">true</boolProp>
+          <stringProp name="RESPONSE_CODE">200</stringProp>
+          <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+          <stringProp name="REQUEST_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+          <stringProp name="RESPONSE_DATA">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;
+  &lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;
+  &lt;meta name=&quot;author&quot; content=&quot;&quot;&gt;
+  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;link rel=&quot;icon&quot; href=&quot;favicon.ico&quot;&gt;
+
+  &lt;title&gt;STORE&lt;/title&gt;
+  &lt;link href=&quot;node_modules/bootstrap/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+  &lt;link href=&quot;node_modules/video.js/dist/video-js.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+  &lt;link href=&quot;css/latofonts.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+  &lt;link href=&quot;css/latostyle.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+  &lt;style&gt;
+    .navbar-toggler {
+      z-index: 1;
+    }
+
+    @media (max-width: 800px) {
+      #carouselExampleIndicators {
+        display: none;
+      }
+    }
+
+    /* Temporary fix for img-fluid sizing within the carousel */
+
+    .carousel-item.active,
+    .carousel-item-next,
+    .carousel-item-prev {
+      display: block;
+    }
+
+    body {
+      font-size: 11pt;
+      /*padding-top: 50px;*/
+      color: #868688;
+      background-color: #FAFCFF;
+    }
+
+    nav {
+      /*background-color: #e7e7e7*/
+      background: rgba(135, 15, 93, 1);
+      background: -moz-linear-gradient(left, rgba(135, 15, 93, 1) 0%, rgba(135, 15, 93, 1) 19%, rgba(63, 41, 133, 1) 55%, rgba(40, 17, 115, 1) 100%);
+      background: -webkit-gradient(left top, right top, color-stop(0%, rgba(135, 15, 93, 1)), color-stop(19%, rgba(135, 15, 93, 1)), color-stop(55%, rgba(63, 41, 133, 1)), color-stop(100%, rgba(40, 17, 115, 1)));
+      background: -webkit-linear-gradient(left, rgba(135, 15, 93, 1) 0%, rgba(135, 15, 93, 1) 19%, rgba(63, 41, 133, 1) 55%, rgba(40, 17, 115, 1) 100%);
+      background: -o-linear-gradient(left, rgba(135, 15, 93, 1) 0%, rgba(135, 15, 93, 1) 19%, rgba(63, 41, 133, 1) 55%, rgba(40, 17, 115, 1) 100%);
+      background: -ms-linear-gradient(left, rgba(135, 15, 93, 1) 0%, rgba(135, 15, 93, 1) 19%, rgba(63, 41, 133, 1) 55%, rgba(40, 17, 115, 1) 100%);
+      background: linear-gradient(to right, rgba(135, 15, 93, 1) 0%, rgba(135, 15, 93, 1) 19%, rgba(63, 41, 133, 1) 55%, rgba(40, 17, 115, 1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&apos;#870f5d&apos;, endColorstr=&apos;#281173&apos;, GradientType=1);
+    }
+
+    /*      .fixed-top{
+        position:absolute;
+
+      } */
+
+    #footc {
+      padding-bottom: 3rem;
+      padding-top: 3rem;
+      /*background-color: #e7e7e7*/
+      background: rgba(135, 15, 93, 1);
+      background: -moz-linear-gradient(left, rgba(135, 15, 93, 1) 0%, rgba(135, 15, 93, 1) 19%, rgba(63, 41, 133, 1) 55%, rgba(40, 17, 115, 1) 100%);
+      background: -webkit-gradient(left top, right top, color-stop(0%, rgba(135, 15, 93, 1)), color-stop(19%, rgba(135, 15, 93, 1)), color-stop(55%, rgba(63, 41, 133, 1)), color-stop(100%, rgba(40, 17, 115, 1)));
+      background: -webkit-linear-gradient(left, rgba(135, 15, 93, 1) 0%, rgba(135, 15, 93, 1) 19%, rgba(63, 41, 133, 1) 55%, rgba(40, 17, 115, 1) 100%);
+      background: -o-linear-gradient(left, rgba(135, 15, 93, 1) 0%, rgba(135, 15, 93, 1) 19%, rgba(63, 41, 133, 1) 55%, rgba(40, 17, 115, 1) 100%);
+      background: -ms-linear-gradient(left, rgba(135, 15, 93, 1) 0%, rgba(135, 15, 93, 1) 19%, rgba(63, 41, 133, 1) 55%, rgba(40, 17, 115, 1) 100%);
+      background: linear-gradient(to right, rgba(135, 15, 93, 1) 0%, rgba(135, 15, 93, 1) 19%, rgba(63, 41, 133, 1) 55%, rgba(40, 17, 115, 1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&apos;#870f5d&apos;, endColorstr=&apos;#281173&apos;, GradientType=1);
+      color: white;
+    }
+
+    #cat {
+      /*background-color: #e7e7e7*/
+      background: rgba(135, 15, 93, 1);
+      background: -moz-linear-gradient(left, rgba(135, 15, 93, 1) 0%, rgba(135, 15, 93, 1) 19%, rgba(63, 41, 133, 1) 55%, rgba(40, 17, 115, 1) 100%);
+      background: -webkit-gradient(left top, right top, color-stop(0%, rgba(135, 15, 93, 1)), color-stop(19%, rgba(135, 15, 93, 1)), color-stop(55%, rgba(63, 41, 133, 1)), color-stop(100%, rgba(40, 17, 115, 1)));
+      background: -webkit-linear-gradient(left, rgba(135, 15, 93, 1) 0%, rgba(135, 15, 93, 1) 19%, rgba(63, 41, 133, 1) 55%, rgba(40, 17, 115, 1) 100%);
+      background: -o-linear-gradient(left, rgba(135, 15, 93, 1) 0%, rgba(135, 15, 93, 1) 19%, rgba(63, 41, 133, 1) 55%, rgba(40, 17, 115, 1) 100%);
+      background: -ms-linear-gradient(left, rgba(135, 15, 93, 1) 0%, rgba(135, 15, 93, 1) 19%, rgba(63, 41, 133, 1) 55%, rgba(40, 17, 115, 1) 100%);
+      background: linear-gradient(to right, rgba(135, 15, 93, 1) 0%, rgba(135, 15, 93, 1) 19%, rgba(63, 41, 133, 1) 55%, rgba(40, 17, 115, 1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&apos;#870f5d&apos;, endColorstr=&apos;#281173&apos;, GradientType=1);
+      color: white;
+      /*font-family: Lato;*/
+      font-size: 25px;
+      font-weight: bold;
+      /*font-style: normal;*/
+      /*font-variant: normal;*/
+    }
+
+    nav a {
+      color: white;
+      /*font-family: Lato;*/
+      font-size: 16px;
+      font-weight: bold;
+      /*color: #868688;*/
+    }
+
+    #itemc {
+      /*color:white;*/
+      /*font-family: Lato;*/
+      font-size: 20px;
+      font-weight: bold;
+      color: #666;
+    }
+
+    nav a:hover {
+      color: #21E8CB;
+      text-decoration: none;
+    }
+
+    #nava {
+      color: white;
+      text-decoration: none;
+    }
+
+    .navbar-toggle .icon-bar {
+      background-color: #868688;
+    }
+
+    .starter-template {
+      padding: 40px 15px;
+      text-align: center;
+    }
+
+    .video-js {
+      margin: 0 auto;
+    }
+
+    input {
+      margin-top: 15px;
+      min-width: 450px;
+      padding: 5px;
+    }
+
+    #next2 {
+      cursor: pointer;
+      float: right;
+    }
+
+    .navbar-toggleable-md&gt;.container {
+      align-self: flex-start;
+    }
+
+    #carouselExampleIndicators {
+
+      /*width: 86%;*/
+      margin-left: 2%;
+      -webkit-box-shadow: 0px 11px 5px -1px rgba(0, 0, 0, 0.31);
+      -moz-box-shadow: 0px 11px 5px -1px rgba(0, 0, 0, 0.31);
+      box-shadow: 0px 11px 5px -1px rgba(0, 0, 0, 0.31);
+    }
+
+    #contcar {
+      position: absolute;
+      display: block;
+      left: calc(50% - 400px);
+      top: 22%;
+      z-index: 2;
+      margin-left: auto !important;
+      margin-right: auto;
+      align-items: center !important;
+      width: 800px;
+    }
+
+
+    .carousel-control-prev {
+      left: -10%;
+    }
+
+    .carousel-control-next {
+      right: -10%;
+    }
+
+    #contcont {
+      margin-top: 6%;
+    }
+
+    #article {
+      line-height: 1.5rem;
+      height: 4.7rem;
+      overflow: hidden;
+      text-overflow: -o-ellipsis-lastline;
+    }
+
+    h2.grrrr {
+      display: table;
+      white-space: nowrap;
+
+      &amp;:after {
+        border-top: 3px solid black;
+        content: &apos;&apos;;
+        display: table-cell;
+        position: relative;
+        top: 0.8em;
+        width: 30%;
+      }
+
+      &amp;:after {
+        left: 1.5%;
+      }
+    }
+
+    h4.grrrr {
+      position: relative;
+      overflow: hidden;
+    }
+
+
+    h4.grrrr:after {
+      display: inline-block;
+      content: &quot;&quot;;
+      height: 2px;
+      background: white;
+      position: absolute;
+      width: 22%;
+      top: 50%;
+      margin-top: 2px;
+      margin-left: 15px;
+    }
+
+    .py-5 {
+      padding-bottom: 1rem !important;
+      padding-top: 1rem !important;
+    }
+
+    #fotcont {
+      margin-left: 10%;
+    }
+
+    .slide-image {
+      width: 100%;
+    }
+
+    .carousel-holder {
+      margin-bottom: 30px;
+    }
+
+    .carousel-control,
+    .item {
+      border-radius: 4px;
+    }
+
+    /*#divcarcont{
+  align-self: flex-end;
+}*/
+
+    html,
+    body {
+      max-width: 100%;
+      overflow-x: hidden;
+      padding: 0px !important;
+    }
+
+    .navbar-nav {
+      display: flex;
+    }
+
+    .navbar-toggleable-md .navbar-nav {
+      -moz-box-direction: normal;
+      -moz-box-orient: horizontal;
+      flex-direction: row;
+    }
+
+    .ml-auto {
+      margin-left: auto !important;
+    }
+
+    .navbar-collapse {
+      flex-basis: 44% !important;
+    }
+
+    .navbar-brand {
+      margin-right: 20rem;
+    }
+
+    .navbar-toggleable-md .navbar-nav .nav-link {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+
+    .navbar-toggleable-md .navbar-collapse {
+      /*display: contents;*/
+      width: 100%;
+    }
+
+    #narvbarx {
+      align-items: baseline !important;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;!-- modal --&gt;
+  &lt;div class=&quot;modal fade&quot; id=&quot;exampleModal&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;exampleModalLabel&quot;
+    aria-hidden=&quot;true&quot;&gt;
+    &lt;div class=&quot;modal-dialog&quot; role=&quot;document&quot;&gt;
+      &lt;div class=&quot;modal-content&quot;&gt;
+        &lt;div class=&quot;modal-header&quot;&gt;
+          &lt;h5 class=&quot;modal-title&quot; id=&quot;exampleModalLabel&quot;&gt;New message&lt;/h5&gt;
+          &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;
+            &lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+          &lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;modal-body&quot;&gt;
+          &lt;form&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+              &lt;label for=&quot;recipient-name&quot; class=&quot;form-control-label&quot;&gt;Contact Email:&lt;/label&gt;
+              &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;recipient-email&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+              &lt;label for=&quot;recipient-name&quot; class=&quot;form-control-label&quot;&gt;Contact Name:&lt;/label&gt;
+              &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;recipient-name&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+              &lt;label for=&quot;message-text&quot; class=&quot;form-control-label&quot;&gt;Message:&lt;/label&gt;
+              &lt;textarea class=&quot;form-control&quot; id=&quot;message-text&quot;&gt;&lt;/textarea&gt;
+            &lt;/div&gt;
+          &lt;/form&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;modal-footer&quot;&gt;
+          &lt;button type=&quot;button&quot; class=&quot;btn btn-secondary&quot; data-dismiss=&quot;modal&quot;&gt;Close&lt;/button&gt;
+          &lt;button type=&quot;button&quot; onclick=&quot;send()&quot; class=&quot;btn btn-primary&quot;&gt;Send message&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+
+  &lt;!-- end modal --&gt;
+
+  &lt;!-- modal SignIn --&gt;
+  &lt;div class=&quot;modal fade&quot; id=&quot;signInModal&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;signInModalLabel&quot;
+    aria-hidden=&quot;true&quot;&gt;
+    &lt;div class=&quot;modal-dialog&quot; role=&quot;document&quot;&gt;
+      &lt;div class=&quot;modal-content&quot;&gt;
+        &lt;div class=&quot;modal-header&quot;&gt;
+          &lt;h5 class=&quot;modal-title&quot; id=&quot;signInModalLabel&quot;&gt;Sign up&lt;/h5&gt;
+          &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;
+            &lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+          &lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;modal-body&quot;&gt;
+          &lt;form&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+              &lt;label for=&quot;sign-username&quot; class=&quot;form-control-label&quot;&gt;Username:&lt;/label&gt;
+              &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;sign-username&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+              &lt;label for=&quot;sign-password&quot; class=&quot;form-control-label&quot;&gt;Password:&lt;/label&gt;
+              &lt;input type=&quot;password&quot; class=&quot;form-control&quot; id=&quot;sign-password&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+              &lt;label id=&quot;errors&quot; style=&quot;color:red&quot; class=&quot;form-control-label&quot;&gt;&lt;/label&gt;
+            &lt;/div&gt;
+          &lt;/form&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;modal-footer&quot;&gt;
+          &lt;button type=&quot;button&quot; class=&quot;btn btn-secondary&quot; data-dismiss=&quot;modal&quot;&gt;Close&lt;/button&gt;
+          &lt;button type=&quot;button&quot; onClick=&quot;register()&quot; class=&quot;btn btn-primary&quot;&gt;Sign up&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!-- end modal --&gt;
+
+  &lt;!-- modal logIn --&gt;
+  &lt;div class=&quot;modal fade&quot; id=&quot;logInModal&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;logInModalLabel&quot;
+    aria-hidden=&quot;true&quot;&gt;
+    &lt;div class=&quot;modal-dialog&quot; role=&quot;document&quot;&gt;
+      &lt;div class=&quot;modal-content&quot;&gt;
+        &lt;div class=&quot;modal-header&quot;&gt;
+          &lt;h5 class=&quot;modal-title&quot; id=&quot;logInModalLabel&quot;&gt;Log in&lt;/h5&gt;
+          &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;
+            &lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+          &lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;modal-body&quot;&gt;
+          &lt;form&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+              &lt;label for=&quot;log-name&quot; class=&quot;form-control-label&quot;&gt;Username:&lt;/label&gt;
+              &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;loginusername&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+              &lt;label for=&quot;log-pass&quot; class=&quot;form-control-label&quot;&gt;Password:&lt;/label&gt;
+              &lt;input type=&quot;password&quot; class=&quot;form-control&quot; id=&quot;loginpassword&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+              &lt;label for=&quot;log-pass&quot; id=&quot;errorl&quot; class=&quot;form-control-label&quot;&gt;&lt;/label&gt;
+            &lt;/div&gt;
+          &lt;/form&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;modal-footer&quot;&gt;
+          &lt;button type=&quot;button&quot; class=&quot;btn btn-secondary&quot; data-dismiss=&quot;modal&quot;&gt;Close&lt;/button&gt;
+          &lt;button type=&quot;button&quot; onClick=&quot;logIn()&quot; class=&quot;btn btn-primary&quot;&gt;Log in&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!-- end modal --&gt;
+
+  &lt;!-- modal video --&gt;
+  &lt;div class=&quot;modal fade&quot; id=&quot;videoModal&quot; role=&quot;dialog&quot;&gt;
+    &lt;div class=&quot;modal-dialog&quot;&gt;
+      &lt;div class=&quot;modal-content&quot;&gt;
+        &lt;div class=&quot;modal-header&quot;&gt;
+          &lt;h5 class=&quot;modal-title&quot; id=&quot;videoModalLabel&quot;&gt;About us&lt;/h5&gt;
+          &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;
+            &lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+          &lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;modal-body&quot;&gt;
+          &lt;form&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+              &lt;video poster=&quot;imgs/front.jpg&quot; id=example-video width=400 height=320 class=&quot;video-js&quot; controls&gt;
+              &lt;/video&gt;
+            &lt;/div&gt;
+          &lt;/form&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;modal-footer&quot;&gt;
+          &lt;button type=&quot;button&quot; class=&quot;btn btn-secondary&quot; data-dismiss=&quot;modal&quot;&gt;Close&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!-- Navigation --&gt;
+  &lt;nav style=&quot;height:350px&quot; id=&quot;narvbarx&quot; class=&quot;navbar navbar-toggleable-md bg-inverse&quot;&gt;
+    &lt;button class=&quot;navbar-toggler navbar-toggler-right&quot; type=&quot;button&quot; data-toggle=&quot;collapse&quot;
+      data-target=&quot;#navbarExample&quot; aria-controls=&quot;navbarExample&quot; aria-expanded=&quot;false&quot; aria-label=&quot;Toggle navigation&quot;&gt;
+      &lt;span class=&quot;navbar-toggler-icon&quot;&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;a class=&quot;navbar-brand&quot; id=&quot;nava&quot; href=&quot;index.html&quot;&gt;&lt;img width=50 height=50 style=&quot;margin-right:10px&quot; src=&quot;bm.png&quot;&gt;
+      PRODUCT STORE&lt;/a&gt;
+    &lt;div class=&quot;navbar-collapse&quot; id=&quot;navbarExample&quot;&gt;
+      &lt;ul class=&quot;navbar-nav ml-auto&quot;&gt;
+        &lt;li class=&quot;nav-item active&quot;&gt;
+          &lt;a class=&quot;nav-link&quot; href=&quot;index.html&quot;&gt;Home &lt;span class=&quot;sr-only&quot;&gt;(current)&lt;/span&gt;&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;
+          &lt;a class=&quot;nav-link&quot; data-toggle=&quot;modal&quot; data-target=&quot;#exampleModal&quot; href=&quot;#&quot;&gt;Contact&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;
+          &lt;a class=&quot;nav-link&quot; data-toggle=&quot;modal&quot; data-target=&quot;#videoModal&quot; href=&quot;#&quot;&gt;About us&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;
+          &lt;a class=&quot;nav-link&quot; id=&quot;cartur&quot; href=&quot;cart.html&quot;&gt;Cart&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;
+          &lt;a class=&quot;nav-link&quot; href=&quot;#&quot; id=&quot;login2&quot; data-toggle=&quot;modal&quot; data-target=&quot;#logInModal&quot;&gt;Log in&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;
+          &lt;a class=&quot;nav-link&quot; href=&quot;#&quot; style=&quot;display:none&quot; id=&quot;logout2&quot; onClick=&quot;logOut()&quot;&gt;Log out&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;
+          &lt;a class=&quot;nav-link&quot; href=&quot;#&quot; style=&quot;display:none&quot; id=&quot;nameofuser&quot;&gt;&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;
+          &lt;a class=&quot;nav-link&quot; href=&quot;#&quot; id=&quot;signin2&quot; data-toggle=&quot;modal&quot; data-target=&quot;#signInModal&quot;&gt;Sign up&lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;contcar&quot; class=&quot;lg-9 md-6&quot;&gt;
+      &lt;div id=&quot;carouselExampleIndicators&quot; class=&quot;carousel slide&quot; data-ride=&quot;carousel&quot;&gt;
+        &lt;ol class=&quot;carousel-indicators&quot;&gt;
+          &lt;li data-target=&quot;#carouselExampleIndicators&quot; data-slide-to=&quot;0&quot; class=&quot;active&quot;&gt;&lt;/li&gt;
+          &lt;li data-target=&quot;#carouselExampleIndicators&quot; data-slide-to=&quot;1&quot;&gt;&lt;/li&gt;
+          &lt;li data-target=&quot;#carouselExampleIndicators&quot; data-slide-to=&quot;2&quot;&gt;&lt;/li&gt;
+        &lt;/ol&gt;
+        &lt;div class=&quot;carousel-inner&quot;&gt;
+          &lt;div class=&quot;carousel-item active&quot;&gt;
+            &lt;img class=&quot;d-block img-fluid&quot; src=&quot;Samsung1.jpg&quot; alt=&quot;First slide&quot;&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;carousel-item&quot;&gt;
+            &lt;img class=&quot;d-block img-fluid&quot; src=&quot;nexus1.jpg&quot; alt=&quot;Second slide&quot;&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;carousel-item&quot;&gt;
+            &lt;img class=&quot;d-block img-fluid&quot; src=&quot;iphone1.jpg&quot; alt=&quot;Third slide&quot;&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;a class=&quot;carousel-control-prev&quot; href=&quot;#carouselExampleIndicators&quot; role=&quot;button&quot; data-slide=&quot;prev&quot;&gt;
+          &lt;span class=&quot;carousel-control-prev-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+          &lt;span class=&quot;sr-only&quot;&gt;Previous&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;a class=&quot;carousel-control-next&quot; href=&quot;#carouselExampleIndicators&quot; role=&quot;button&quot; data-slide=&quot;next&quot;&gt;
+          &lt;span class=&quot;carousel-control-next-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+          &lt;span class=&quot;sr-only&quot;&gt;Next&lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/nav&gt;
+
+
+  &lt;div class=&quot;container&quot; id=&quot;contcont&quot;&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+
+      &lt;div class=&quot;col-lg-3&quot;&gt;
+        &lt;div class=&quot;list-group&quot;&gt;
+          &lt;a href=&quot;&quot; class=&quot;list-group-item&quot; id=&quot;cat&quot;&gt;CATEGORIES&lt;/a&gt;
+          &lt;a href=&quot;#&quot; id=&quot;itemc&quot; onClick=&quot;byCat(&apos;phone&apos;)&quot; class=&quot;list-group-item&quot;&gt;Phones&lt;/a&gt;
+          &lt;a href=&quot;#&quot; id=&quot;itemc&quot; onClick=&quot;byCat(&apos;notebook&apos;)&quot; class=&quot;list-group-item&quot;&gt;Laptops&lt;/a&gt;
+          &lt;a href=&quot;#&quot; id=&quot;itemc&quot; onClick=&quot;byCat(&apos;monitor&apos;)&quot; class=&quot;list-group-item&quot;&gt;Monitors&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;col-lg-9&quot;&gt;
+        &lt;!-- &lt;div class=&quot;container&quot;&gt; --&gt;
+
+        &lt;div class=&quot;row&quot; id=&quot;tbodyid&quot;&gt;
+        &lt;/div&gt;
+        &lt;form name=&quot;frm&quot; id=&quot;frm&quot; style=&quot;float: right;&quot; onsubmit=&quot;return false&quot;&gt;
+          &lt;!-- &lt;button type=&quot;button&quot; id=&quot;next2&quot; class=&quot;btn btn-success&quot;&gt;Next &gt;&lt;/button&gt; --&gt;
+          &lt;ul class=&quot;pagination&quot;&gt;
+            &lt;li class=&quot;page-item&quot;&gt;&lt;button class=&quot;page-link&quot; id=&quot;prev2&quot;&gt;Previous&lt;/button&gt;&lt;/li&gt;
+            &lt;li class=&quot;page-item&quot;&gt;&lt;button class=&quot;page-link&quot; id=&quot;next2&quot;&gt;Next&lt;/button&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+
+        &lt;/form&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script src=&quot;node_modules/jquery/dist/jquery.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;node_modules/video.js/dist/video.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;node_modules/videojs-contrib-hls/dist/videojs-contrib-hls.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;node_modules/tether/dist/js/tether.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;node_modules/bootstrap/dist/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script type=&quot;text/javascript&quot; src=&quot;js/index.js&quot;&gt;&lt;/script&gt;
+
+  &lt;div id=&quot;footc&quot;&gt;
+    &lt;div id=&quot;fotcont&quot; class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-sm-4 col-lg-4 col-md-4&quot;&gt;
+        &lt;div class=&quot;thumbnail&quot;&gt;
+          &lt;div class=&quot;caption&quot;&gt;
+            &lt;h4 class=&quot;grrrr&quot;&gt;&lt;b&gt;About Us&lt;/b&gt;&lt;/h4&gt;
+            &lt;p&gt;We believe performance needs to be validated at every stage of the software development cycle and our
+              open source compatible, massively scalable platform makes that a reality.&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;col-sm-3 col-lg-3 col-md-3&quot;&gt;
+        &lt;div class=&quot;thumbnail&quot;&gt;
+          &lt;div class=&quot;caption&quot;&gt;
+            &lt;h4 class=&quot;grrrr&quot;&gt;&lt;b&gt;Get in Touch&lt;/b&gt;&lt;/h4&gt;
+            &lt;p&gt;Address: 2390 El Camino Real&lt;/p&gt;
+            &lt;p&gt;Phone: +440 123456&lt;/p&gt;
+            &lt;p&gt;Email: demo@blazemeter.com &lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;col-sm-4 col-lg-4 col-md-4&quot;&gt;
+        &lt;div class=&quot;thumbnail&quot;&gt;
+          &lt;div class=&quot;caption&quot;&gt;
+            &lt;h4&gt;&lt;img width=50 height=50 style=&quot;margin-right:10px&quot; src=&quot;bm.png&quot;&gt; PRODUCT STORE&lt;/h4&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;footer class=&quot;py-5 bg-inverse&quot;&gt;
+    &lt;p class=&quot;m-0 text-center text-white&quot;&gt;Copyright &amp;copy; Product Store 2017&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</stringProp>
+          <stringProp name="RESPONSE_TIME">${__Random(50,500)}</stringProp>
+          <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
+          <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
+          <stringProp name="URL"></stringProp>
+          <stringProp name="RESULT_CLASS">org.apache.jmeter.samplers.SampleResult</stringProp>
+        </kg.apc.jmeter.samplers.DummySampler>
+        <hashTree>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">REGEX_VARIABLE</stringProp>
+            <stringProp name="RegexExtractor.regex">&lt;meta.*name=&quot;(.*)&quot;.*content=&quot;(.*)&quot;.*&gt;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">not found</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+            <stringProp name="Scope.variable"></stringProp>
+            <stringProp name="TestPlan.comments">&lt;meta.*name=“(.*)“.*content=“(.*)“.*&gt;</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+        </hashTree>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="jp@gc - Dummy Sampler" enabled="true">
+          <boolProp name="WAITING">true</boolProp>
+          <boolProp name="SUCCESFULL">true</boolProp>
+          <stringProp name="RESPONSE_CODE">200</stringProp>
+          <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+          <stringProp name="REQUEST_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+          <stringProp name="RESPONSE_DATA">{
+	&quot;employees&quot;: [{
+		&quot;firstName&quot;: &quot;Anuja&quot;,
+		&quot;lastName&quot;: &quot;Jain&quot;
+	}]
+}</stringProp>
+          <stringProp name="RESPONSE_TIME">${__Random(50,500)}</stringProp>
+          <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
+          <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
+          <stringProp name="URL"></stringProp>
+          <stringProp name="RESULT_CLASS">org.apache.jmeter.samplers.SampleResult</stringProp>
+        </kg.apc.jmeter.samplers.DummySampler>
+        <hashTree>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="jp@gc - JSON/YAML Path Extractor" enabled="true">
+            <stringProp name="VAR">JSON_VARIABLE</stringProp>
+            <stringProp name="JSONPATH">$.employees[*].first</stringProp>
+            <stringProp name="DEFAULT">not found</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+            <stringProp name="INPUT_FORMAT">JSON</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+        </hashTree>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="jp@gc - Dummy Sampler" enabled="true">
+          <boolProp name="WAITING">true</boolProp>
+          <boolProp name="SUCCESFULL">true</boolProp>
+          <stringProp name="RESPONSE_CODE">200</stringProp>
+          <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+          <stringProp name="REQUEST_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+          <stringProp name="RESPONSE_DATA">{&quot;firstName&quot;: &quot;John&quot;}</stringProp>
+          <stringProp name="RESPONSE_TIME">${__Random(50,500)}</stringProp>
+          <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
+          <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
+          <stringProp name="URL"></stringProp>
+          <stringProp name="RESULT_CLASS">org.apache.jmeter.samplers.SampleResult</stringProp>
+        </kg.apc.jmeter.samplers.DummySampler>
+        <hashTree>
+          <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="Boundary Extractor" enabled="true">
+            <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
+            <stringProp name="BoundaryExtractor.refname">boundary_variable</stringProp>
+            <stringProp name="BoundaryExtractor.lboundary">{&quot;firstName&quot;: &quot;</stringProp>
+            <stringProp name="BoundaryExtractor.rboundary">&quot;}</stringProp>
+            <stringProp name="BoundaryExtractor.default">not found</stringProp>
+            <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
+            <stringProp name="BoundaryExtractor.match_number">0</stringProp>
+          </BoundaryExtractor>
+          <hashTree/>
+        </hashTree>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
